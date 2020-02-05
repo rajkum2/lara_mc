@@ -11,13 +11,20 @@
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 Route::get('/', function () {
-    return view('welcome');
+    return view('web.index');
+});
+Route::get('/contact', function () {
+    return view('web.contact');
 });
 
 Auth::routes(['verify' => true]);
 
-Route::get('/home', 'HomeController@index')->middleware('verified');
+// Route::get('/home', 'HomeController@index')->middleware('verified');
+
 
 
 Route::resource('contacts', 'ContactController');
